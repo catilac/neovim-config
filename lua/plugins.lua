@@ -27,6 +27,21 @@ return require("lazy").setup({
     priority = 100, -- Load early
   },
 
+  {
+      'dense-analysis/ale',
+      config = function()
+          -- Configuration goes here.
+          local g = vim.g
+
+          g.ale_ruby_rubocop_auto_correct_all = 1
+
+          g.ale_linters = {
+              rust = { 'analyzer' },
+              lua = {'lua_language_server'}
+          }
+      end
+  },
+
   -- Language Server Protocol support
   {
     "neovim/nvim-lspconfig", -- Base LSP configurations
