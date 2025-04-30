@@ -17,9 +17,6 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Plugin specifications
 return require("lazy").setup({
-  -- Essential plugins
-  "nvim-lua/plenary.nvim", -- Utility functions (dependency for many plugins)
-
   -- Treesitter for syntax highlighting (load early)
   {
     "nvim-treesitter/nvim-treesitter",
@@ -53,10 +50,12 @@ return require("lazy").setup({
   },
 
   -- File explorer
+  { "nvim-tree/nvim-web-devicons", opts = {} },
   {
     "nvim-tree/nvim-tree.lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
+  
 
   -- Theme (load last after all functionality is configured)
   { 
